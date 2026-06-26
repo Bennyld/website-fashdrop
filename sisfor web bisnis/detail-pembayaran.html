@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detail Pembayaran - FashDrop</title>
+
+    <link rel="stylesheet" href="detail-pembayaran.css">
+
+</head>
+
+<body>
+
+    <div class="mobile-container">
+
+        <!-- Header -->
+
+        <header>
+
+            <h2>Detail Pembayaran</h2>
+
+            <p>Silakan selesaikan pembayaran Anda.</p>
+
+        </header>
+
+        <!-- Status -->
+
+        <div class="status-card">
+
+            <span class="status waiting">
+
+                Menunggu Pembayaran
+
+            </span>
+
+            <h3>Sisa Waktu</h3>
+
+            <h1 id="timer">24:00:00</h1>
+
+        </div>
+
+        <!-- Detail Produk -->
+
+        <div class="card">
+
+            <h3>Detail Pesanan</h3>
+
+            <hr>
+
+            <div class="row">
+
+                <span>Produk</span>
+
+                <span>Hammerstout Chino</span>
+
+            </div>
+
+            <div class="row">
+
+                <span>Ukuran</span>
+
+                <span>XL</span>
+
+            </div>
+
+            <div class="row">
+
+                <span>Jumlah</span>
+
+                <span>1</span>
+
+            </div>
+
+            <div class="row">
+
+                <span>Harga</span>
+
+                <span>Rp129.000</span>
+
+            </div>
+
+            <div class="row">
+
+                <span>Ongkir</span>
+
+                <span>Rp20.000</span>
+
+            </div>
+
+            <div class="row total">
+
+                <span>Total</span>
+
+                <span>Rp149.000</span>
+
+            </div>
+
+        </div>
+
+        <!-- Pembayaran -->
+
+        <div class="card">
+
+            <h3>Metode Pembayaran</h3>
+
+            <hr>
+
+            <p><b>QRIS</b></p>
+
+            <img src="qris 2.jpeg" class="qris">
+
+            <p class="center">
+
+                Scan QR Code di atas menggunakan aplikasi E-Wallet atau Mobile Banking.
+
+            </p>
+
+            <hr>
+
+            <h4>Transfer Bank</h4>
+
+            <p><b>Bank BCA</b></p>
+
+            <div class="rekening">
+
+                <span id="rekening">
+
+                    1234567890
+
+                </span>
+
+                <button onclick="copyRekening()">
+
+                    Salin
+
+                </button>
+
+            </div>
+
+            <p>a/n Benny Leonardo</p>
+
+        </div>
+
+        <!-- Upload -->
+
+        <div class="card">
+
+            <h3>Upload Bukti Pembayaran</h3>
+
+            <hr>
+
+            <input type="file">
+
+            <button class="upload-btn" onclick="konfirmasiPembayaran()">
+
+                Konfirmasi Pembayaran
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function konfirmasiPembayaran() {
+
+            alert("Pembayaran berhasil dikonfirmasi.\nPesanan Anda sedang menunggu verifikasi admin.");
+
+            window.location.href = "pesanan.html";
+
+        }
+
+        function copyRekening() {
+
+            navigator.clipboard.writeText("1234567890");
+
+            alert("Nomor rekening berhasil disalin.");
+
+        }
+
+        // Countdown 24 jam
+
+        let waktu = 86400;
+
+        setInterval(function () {
+
+            let jam = Math.floor(waktu / 3600);
+
+            let menit = Math.floor((waktu % 3600) / 60);
+
+            let detik = waktu % 60;
+
+            document.getElementById("timer").innerHTML =
+
+                String(jam).padStart(2, '0') + ":" +
+
+                String(menit).padStart(2, '0') + ":" +
+
+                String(detik).padStart(2, '0');
+
+            if (waktu > 0) {
+
+                waktu--;
+
+            }
+
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - FashDrop</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+    <div id="sidebar" class="sidebar">
+
+        <div class="sidebar-header">
+
+            <img src="foto_Benny Leonardo (1).jpg" alt="Logo">
+
+            <h3>Admin</h3>
+
+            <p>Benny Leonardo</p>
+
+        </div>
+
+        <div class="sidebar-menu">
+
+            <a href="index.html">🏠 Home</a>
+
+            <a href="admin.html">📊 Dashboard Admin</a>
+
+            <a href="pesanan.html">📦 Pesanan Saya</a>
+
+            <a href="login.html">🔑 Login</a>
+
+        </div>
+
+    </div>
+
+    <div class="mobile-container">
+
+        <!-- HEADER -->
+        <header>
+
+    <div class="header-top">
+
+        <span class="menu-button" onclick="toggleMenu()">
+            ☰
+        </span>
+
+        <h2>Dashboard Admin</h2>
+
+    </div>
+
+    <p>Selamat Datang, Benny Leonardo</p>
+
+</header>
+
+        <!-- STATISTIK -->
+
+        <section class="dashboard">
+
+            <div class="card-stat">
+                <h3 id="totalPesanan">4</h3>
+                <p>Total Pesanan</p>
+            </div>
+
+            <div class="card-stat orange">
+                <h3 id="totalMenunggu">2</h3>
+                <p>Menunggu</p>
+            </div>
+
+            <div class="card-stat blue">
+                <h3 id="totalDiproses">1</h3>
+                <p>Diproses</p>
+            </div>
+
+            <div class="card-stat green">
+                <h3 id="totalSelesai">1</h3>
+                <p>Selesai</p>
+            </div>
+
+        </section>
+
+        <!-- JUDUL -->
+
+        <div class="judul">
+
+            <h3>Pesanan Terbaru</h3>
+
+        </div>
+
+        <!-- DAFTAR PESANAN -->
+
+        <section class="order-list">
+
+            <!-- PESANAN 1 -->
+
+            <div class="order-card">
+
+                <div class="order-header">
+
+                    <h3>#ORD001</h3>
+
+                    <span class="status waiting">
+                        Menunggu
+                    </span>
+
+                </div>
+
+                <p><b>Pembeli :</b> Benny Leonardo</p>
+
+                <p><b>Produk :</b> Hammerstout Chino Slim Straight</p>
+
+                <p><b>Ukuran :</b> XL</p>
+
+                <p><b>Jumlah :</b> 1</p>
+
+                <p><b>Total :</b> Rp180.000</p>
+
+                <div class="button-group">
+
+                    <button class="detail">
+                        Detail
+                    </button>
+
+                    <select class="status-btn" onchange="ubahStatus(this)">
+
+                        <option value="waiting">🟠 Menunggu</option>
+
+                        <option value="process">🔵 Diproses</option>
+
+                        <option value="kirim">🟣 Dikirim</option>
+
+                        <option value="finish">🟢 Selesai</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- PESANAN 2 -->
+
+            <div class="order-card">
+
+                <div class="order-header">
+
+                    <h3>#ORD002</h3>
+
+                    <span class="status process">
+
+                        Diproses
+
+                    </span>
+
+                </div>
+
+                <p><b>Pembeli :</b> Andi Saputra</p>
+
+                <p><b>Produk :</b> Owners Boxy Work Jacket</p>
+
+                <p><b>Ukuran :</b> L</p>
+
+                <p><b>Jumlah :</b> 2</p>
+
+                <p><b>Total :</b> Rp420.000</p>
+
+                <div class="button-group">
+
+                    <button class="detail">
+                        Detail
+                    </button>
+
+                    <select class="status-btn process" onchange="ubahStatus(this)">
+
+                        <option value="waiting">🟠 Menunggu</option>
+                        <option value="process" selected>🔵 Diproses</option>
+                        <option value="kirim">🟣 Dikirim</option>
+                        <option value="finish">🟢 Selesai</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- PESANAN 3 -->
+
+            <div class="order-card">
+
+                <div class="order-header">
+
+                    <h3>#ORD003</h3>
+
+                    <span class="status finish">
+
+                        Selesai
+
+                    </span>
+
+                </div>
+
+                <p><b>Pembeli :</b> Rizky</p>
+
+                <p><b>Produk :</b> Kemeja Boxy Stripe</p>
+
+                <p><b>Ukuran :</b> M</p>
+
+                <p><b>Jumlah :</b> 1</p>
+
+                <p><b>Total :</b> Rp165.000</p>
+
+                <div class="button-group">
+
+                    <button class="detail">
+                        Detail
+                    </button>
+
+                    <select class="status-btn finish" onchange="ubahStatus(this)">
+
+                        <option value="waiting">🟠 Menunggu</option>
+                        <option value="process">🔵 Diproses</option>
+                        <option value="kirim">🟣 Dikirim</option>
+                        <option value="finish" selected>🟢 Selesai</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- PESANAN 4 -->
+
+            <div class="order-card">
+
+                <div class="order-header">
+
+                    <h3>#ORD004</h3>
+
+                    <span class="status waiting">
+
+                        Menunggu
+
+                    </span>
+
+                </div>
+
+                <p><b>Pembeli :</b> Dimas</p>
+
+                <p><b>Produk :</b> Cargo Beta</p>
+
+                <p><b>Ukuran :</b> XL</p>
+
+                <p><b>Jumlah :</b> 1</p>
+
+                <p><b>Total :</b> Rp210.000</p>
+
+                <div class="button-group">
+
+                    <button class="detail">
+                        Detail
+                    </button>
+
+                    <select class="status-btn waiting" onchange="ubahStatus(this)">
+
+                        <option value="waiting" selected>🟠 Menunggu</option>
+                        <option value="process">🔵 Diproses</option>
+                        <option value="kirim">🟣 Dikirim</option>
+                        <option value="finish">🟢 Selesai</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+
+        function closeSidebar() {
+
+    document.querySelector(".sidebar").classList.remove("active");
+    document.querySelector(".overlay").classList.remove("active");
+
+}
+
+        function toggleMenu(){
+
+    document.querySelector(".sidebar").classList.toggle("active");
+
+    document.querySelector(".overlay").classList.toggle("active");
+
+}
+
+        // ==========================
+        // UPDATE DASHBOARD
+        // ==========================
+
+        function updateDashboard() {
+
+            const semuaStatus = document.querySelectorAll(".status");
+
+            let totalPesanan = semuaStatus.length;
+            let menunggu = 0;
+            let diproses = 0;
+            let selesai = 0;
+
+            semuaStatus.forEach(function (item) {
+
+                let status = item.textContent.trim();
+
+                if (status === "Menunggu") {
+                    menunggu++;
+                }
+
+                else if (status === "Diproses" || status === "Dikirim") {
+                    diproses++;
+                }
+
+                else if (status === "Selesai") {
+                    selesai++;
+                }
+
+            });
+
+            document.getElementById("totalPesanan").textContent = totalPesanan;
+            document.getElementById("totalMenunggu").textContent = menunggu;
+            document.getElementById("totalDiproses").textContent = diproses;
+            document.getElementById("totalSelesai").textContent = selesai;
+
+        }
+
+        // ==========================
+        // UBAH STATUS PESANAN
+        // ==========================
+
+        function ubahStatus(select) {
+
+            const card = select.closest(".order-card");
+            const badge = card.querySelector(".status");
+
+            // Reset class badge
+            badge.classList.remove(
+                "waiting",
+                "process",
+                "kirim",
+                "finish"
+            );
+
+            // Reset class dropdown
+            select.classList.remove(
+                "waiting",
+                "process",
+                "kirim",
+                "finish"
+            );
+
+            switch (select.value) {
+
+                case "waiting":
+
+                    badge.textContent = "Menunggu";
+                    badge.classList.add("waiting");
+                    select.classList.add("waiting");
+
+                    break;
+
+                case "process":
+
+                    badge.textContent = "Diproses";
+                    badge.classList.add("process");
+                    select.classList.add("process");
+
+                    break;
+
+                case "kirim":
+
+                    badge.textContent = "Dikirim";
+                    badge.classList.add("kirim");
+                    select.classList.add("kirim");
+
+                    break;
+
+                case "finish":
+
+                    badge.textContent = "Selesai";
+                    badge.classList.add("finish");
+                    select.classList.add("finish");
+
+                    break;
+
+            }
+
+            // Update statistik
+            updateDashboard();
+
+        }
+
+        // ==========================
+        // SAAT HALAMAN DIBUKA
+        // ==========================
+
+        window.onload = function () {
+
+            // Memberi warna awal pada setiap dropdown
+            document.querySelectorAll(".status-btn").forEach(function (select) {
+
+                select.classList.add(select.value);
+
+            });
+
+            // Hitung statistik pertama kali
+            updateDashboard();
+
+        };
+
+    </script>
+
+</body>
+
+</html>
