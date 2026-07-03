@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashDrop</title>
+
+    <link rel="stylesheet" href="style css.css">
+</head>
+
+<body>
+
+    <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+    <div id="sidebar" class="sidebar">
+
+        <div class="sidebar-header">
+
+            <img src="foto_Benny Leonardo (1).jpg" alt="Logo">
+
+            <h3>Admin</h3>
+
+            <p>Benny Leonardo</p>
+
+        </div>
+
+        <div class="sidebar-menu">
+
+            <a href="utama.html">🏠 beranda</a>
+
+            <a href="profile.html">👤 profile</a>
+
+            <a href="index.html">📖 Produk</a>
+
+            <a href="admin.html">📊 Dashboard Admin</a>
+
+            <a href="pesanan.html">📦 Pesanan Saya</a>
+
+            <a href="#" onclick="openLogin()">🔑 Login</a>
+
+        </div>
+
+    </div>
+
+    <div class="mobile-container">
+
+        <header>
+
+            <!-- Search -->
+            <div class="search-container">
+
+                <div class="menu-button" onclick="openSidebar()">
+                    ☰
+                </div>
+
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Cari ID Produk...">
+                </div>
+
+            </div>
+
+            <!-- Info Toko -->
+            <div class="store-info">
+
+                <div class="logo">
+                    <img src="logo.png" alt="Logo">
+                </div>
+
+                <div class="store-content">
+                    <div class="store-judul">
+                        <h2>FashDrop</h2>
+                    </div>
+
+                    <div class="store-text">
+                        <p>
+                            Beli Produk fashion sesuai referensi dan no link atau sesuai
+                            Kategori yang ada di postingan, jangan lupa di Co guys
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- FILTER -->
+        <div class="filter-header" onclick="toggleFilter()">
+            Filter ▼
+        </div>
+
+        <div class="filter-content" id="filterBox">
+
+            <select id="kategoriFilter" onchange="filterProduk()">
+
+                <option value="semua">Semua Kategori</option>
+
+                <option value="kaos">Kaos</option>
+
+                <option value="celana">Celana</option>
+
+                <option value="jaket">Jaket</option>
+
+            </select>
+
+        </div>
+
+        <!-- KONTEN -->
+        <main>
+
+            <div class="product-grid">
+
+                <a href="detail 1.html">
+                    <div class="product-card" data-kategori="celana">
+                        <img src="produk no 1.png" alt="Produk 1">
+
+                        <div class="product-info">
+                            <h3>1 - Hammerstout - Celana Chino Slim Straight - Prime</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="product-card" data-kategori="celana">
+                    <img src="produk no 2.png" alt="Produk 2">
+
+                    <div class="product-info">
+                        <h3>2 - Hammerstout - Celana Cargo - Beta</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="celana">
+                    <img src="produk no 3.png" alt="Produk 3">
+
+                    <div class="product-info">
+                        <h3>3 - Eastwood Denim Pants Grey Whisker</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="celana">
+                    <img src="produk no 4.png" alt="Produk 4">
+
+                    <div class="product-info">
+                        <h3>4 - Superego Baggy Pants Corduroy Brown Type 1 BPR06F</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="celana">
+                    <img src="produk no 5.png" alt="Produk 5">
+
+                    <div class="product-info">
+                        <h3>5 - Exhale Apparel Celana Panjang Pria Baggy Jeans Taylor Blue Washed Denim</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="jaket">
+                    <img src="produk no 6.png" alt="Produk 6">
+
+                    <div class="product-info">
+                        <h3>6 - X Urband Absolute Jaket Kulit Sintetis Changcuters Rock N Roll Motorcycle Ramones A480
+                        </h3>
+                    </div>
+                </div>
+
+                <a href="detail 2.html">
+                    <div class="product-card" data-kategori="jaket">
+                        <img src="produk no 7.png" alt="Produk 7">
+
+                        <div class="product-info">
+                            <h3>7 - DRITTORONZIO Work Jaket Boxy - Jacket Crop "Liscio" unisex - Hitam</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="product-card" data-kategori="jaket">
+                    <img src="produk no 8.png" alt="Produk 8">
+
+                    <div class="product-info">
+                        <h3>8 - CLOUDY SKY Jaket Boxy Corduroy Pria Navy</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="jaket">
+                    <img src="produk no 9.png" alt="Produk 9">
+
+                    <div class="product-info">
+                        <h3>9 - Owners Boxy Work Jacket - Liberate - Jaket Hitam Terlaris</h3>
+                    </div>
+                </div>
+
+                <a href="detail.html">
+                    <div class="product-card" data-kategori="kaos">
+                        <img src="produk no 10.png" alt="Produk 10">
+
+                        <div class="product-info">
+                            <h3>10 - Kemeja Pendek Stripe | Unbrokeen White | Boxy | Brainsgland </h3>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 11.png" alt="Produk 11">
+
+                    <div class="product-info">
+                        <h3>11 - Lessegos Kemeja Boxy Stripe Lengan Pendek Sainted</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 12.png" alt="Produk 12">
+
+                    <div class="product-info">
+                        <h3>12 - Kemeja Pendek Stripe | Unbrokeen Brown | Boxy | Brainsgland</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 13.png" alt="Produk 13">
+
+                    <div class="product-info">
+                        <h3>13 - Kemeja Pendek Stripe | Unbrokeen Black | Boxy | Brainsgland</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 14.png" alt="Produk 14">
+
+                    <div class="product-info">
+                        <h3>14 - workshirt - kemeja lengan pendek -crop boxy unisex - moodday project</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 15.png" alt="Produk 15">
+
+                    <div class="product-info">
+                        <h3>15 - GRDT - Atelier Boxy Shirt Stripe Blue | Kemeja Pendek Salur</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 16.png" alt="Produk 16">
+
+                    <div class="product-info">
+                        <h3>16 - WORK SHIRT | OVERSIZE | BOXY | HEARLING | SISCA | UNISEX</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 17.png" alt="Produk 17">
+
+                    <div class="product-info">
+                        <h3>17 - ORCA Kemeja Pendek Nifty Short Shirt Sleeved, Black</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 18.png" alt="Produk 18">
+
+                    <div class="product-info">
+                        <h3>18 - Gigg - Squared - Kemeja Boxy Flannel Pria Coklat - Kemeja Lengan Pendek Cowok Boxy
+                            Shirt Brown Grey</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 19.png" alt="Produk 19">
+
+                    <div class="product-info">
+                        <h3>19 - Fairgoods Kemeja Boxy Work Shirt Pereneila Khaki</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 20.png" alt="Produk 20">
+
+                    <div class="product-info">
+                        <h3>20 - hokidoky - kemeja boxy black alena</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 21.png" alt="Produk 21">
+
+                    <div class="product-info">
+                        <h3>21 - CONVERGENT Workshirt Kemeja Flanel Boxy Enchanted Lengan Pendek Pria Wanita</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 22.png" alt="Produk 22">
+
+                    <div class="product-info">
+                        <h3>22 - Gut Franc - The Atelier Boxy Shirt in White</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 23.png" alt="Produk 23">
+
+                    <div class="product-info">
+                        <h3>23 - Monjiro - Astral - Kemeja Boxy Yarndyed Pria Cream - Kemeja Lengan Pendek Cowok - Boxy
+                            Shirt</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 24.png" alt="Produk 24">
+
+                    <div class="product-info">
+                        <h3>24 - CONVERGENT Workshirt Kemeja Flanel Boxy Wise Lengan Pendek Pria Wanita</h3>
+                    </div>
+                </div>
+
+                <div class="product-card" data-kategori="kaos">
+                    <img src="produk no 25.png" alt="Produk 25">
+
+                    <div class="product-info">
+                        <h3>25 - Kemeja Pendek Stripe | Dreamland Black | Boxy | Brainsgland</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- Overlay -->
+        <div id="loginOverlay" class="login-overlay">
+
+            <div class="login-box">
+
+                <span class="close" onclick="closeLogin()">&times;</span>
+
+                <!-- LOGIN -->
+                <div id="loginForm">
+
+                    <h2>Login</h2>
+
+                    <input type="email" placeholder="Masukkan Email">
+
+                    <input type="password" placeholder="Masukkan Password">
+
+                    <button class="btn-login">
+                        Masuk
+                    </button>
+
+                    <p class="switch-text">
+                        Belum punya akun?
+                        <a href="#" onclick="showRegister(event)">
+                            Daftar
+                        </a>
+                    </p>
+
+                </div>
+
+                <!-- REGISTER -->
+                <div id="registerForm" style="display:none;">
+
+                    <h2>Daftar Akun</h2>
+
+                    <input type="text" placeholder="Nama Lengkap">
+
+                    <input type="email" placeholder="Email">
+
+                    <input type="password" placeholder="Password">
+
+                    <input type="password" placeholder="Konfirmasi Password">
+
+                    <button class="btn-login">
+                        Daftar
+                    </button>
+
+                    <p class="switch-text">
+                        Sudah punya akun?
+                        <a href="#" onclick="showLogin(event)">
+                            Login
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script>
+
+            // ============================
+            // BUKA / TUTUP FILTER
+            // ============================
+
+            function toggleFilter() {
+
+                let box = document.getElementById("filterBox");
+
+                if (box.style.display === "block") {
+                    box.style.display = "none";
+                } else {
+                    box.style.display = "block";
+                }
+
+            }
+
+            // ============================
+            // SEARCH + FILTER
+            // ============================
+
+            function filterProduk() {
+
+                const keyword = document.getElementById("searchInput").value.toLowerCase().trim();
+
+                const kategori = document.getElementById("kategoriFilter").value;
+
+                const produk = document.querySelectorAll(".product-card");
+
+                let adaProduk = false;
+
+                produk.forEach(function (item) {
+
+                    const namaProduk = item.querySelector("h3").textContent.toLowerCase();
+
+                    const kategoriProduk = item.getAttribute("data-kategori");
+
+                    const cocokNama = namaProduk.includes(keyword);
+
+                    const cocokKategori =
+                        kategori === "semua" ||
+                        kategori === kategoriProduk;
+
+                    if (cocokNama && cocokKategori) {
+
+                        item.style.display = "block";
+                        adaProduk = true;
+
+                    } else {
+
+                        item.style.display = "none";
+
+                    }
+
+                });
+
+                // Pesan jika tidak ada produk
+                let pesan = document.getElementById("tidakAdaProduk");
+
+                if (!pesan) {
+
+                    pesan = document.createElement("p");
+                    pesan.id = "tidakAdaProduk";
+                    pesan.style.textAlign = "center";
+                    pesan.style.padding = "20px";
+                    pesan.style.color = "white";
+                    pesan.innerHTML = "Produk tidak ditemukan.";
+
+                    document.querySelector("main").appendChild(pesan);
+
+                }
+
+                pesan.style.display = adaProduk ? "none" : "block";
+
+            }
+
+            // ============================
+            // SEARCH REALTIME
+            // ============================
+
+            document.getElementById("searchInput").addEventListener("keyup", filterProduk);
+
+            // ============================
+            // SIDEBAR
+            // ============================
+
+            function openSidebar() {
+
+                document.getElementById("sidebar").classList.add("active");
+                document.getElementById("overlay").classList.add("active");
+
+            }
+
+            function closeSidebar() {
+
+                document.getElementById("sidebar").classList.remove("active");
+                document.getElementById("overlay").classList.remove("active");
+
+            }
+
+
+            function openLogin() {
+
+                document.getElementById("loginOverlay").style.display = "flex";
+
+            }
+
+            function closeLogin() {
+
+                document.getElementById("loginOverlay").style.display = "none";
+
+            }
+
+            function showRegister(event) {
+
+                event.preventDefault();
+
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("registerForm").style.display = "block";
+
+            }
+
+            function showLogin(event) {
+
+                event.preventDefault();
+
+                document.getElementById("registerForm").style.display = "none";
+                document.getElementById("loginForm").style.display = "block";
+
+            }
+
+            window.onclick = function (e) {
+
+                if (e.target == document.getElementById("loginOverlay")) {
+
+                    closeLogin();
+
+                }
+
+            }
+
+
+        </script>
+
+
+    </div>
+
+</body>
+
+</html>
