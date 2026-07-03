@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panduan Penggunaan - FashDrop</title>
+
+    <link rel="stylesheet" href="panduan.css">
+
+</head>
+
+<body>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+
+        <div class="sidebar-header">
+
+            <img src="logo.png" alt="Logo">
+
+            <h2>FashDrop</h2>
+
+            <p>Panduan Penggunaan</p>
+
+        </div>
+
+        <div class="sidebar-menu">
+
+            <a href="utama.html">🏠 beranda</a>
+
+            <a href="profile.html">👤 Profile</a>
+
+            <a href="index.html">📖 produk</a>
+
+            <a href="admin.html">📊 Dashboard Admin</a>
+
+            <a href="pesanan.html">📦 Pesanan Saya</a>
+
+            <a href="#" onclick="openLogin()">🔑 Login</a>
+
+        </div>
+
+    </div>
+
+    <!-- Container -->
+
+    <div class="mobile-container">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="top-header">
+
+                <div class="menu-button" onclick="openSidebar()">
+                    ☰
+                </div>
+
+                <div class="judul-header">
+
+                    <h2>FashDrop</h2>
+
+                    <p>Panduan Penggunaan Aplikasi</p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Banner -->
+
+        <section class="hero">
+
+            <img src="logo.png" alt="Logo">
+
+            <h1>Cara Menggunakan FashDrop</h1>
+
+            <p>
+
+                Selamat datang di aplikasi FashDrop.
+                Ikuti langkah-langkah berikut agar proses pembelian produk
+                berjalan dengan mudah.
+
+            </p>
+
+        </section>
+
+        <!-- LANGKAH -->
+
+        <main>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Login / Registrasi</h2>
+
+                    <p>
+
+                        Login menggunakan akun yang telah dimiliki atau
+                        lakukan registrasi terlebih dahulu sebelum melakukan
+                        transaksi.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Cari Produk</h2>
+
+                    <p>
+
+                        Gunakan kolom pencarian atau filter kategori
+                        untuk menemukan produk fashion yang diinginkan.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Lihat Detail Produk</h2>
+
+                    <p>
+
+                        Klik salah satu produk untuk melihat deskripsi,
+                        ukuran, warna, harga dan stok produk.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Tambah ke Keranjang</h2>
+
+                    <p>
+
+                        Tentukan ukuran dan jumlah produk kemudian tekan
+                        tombol Tambah ke Keranjang.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    5
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Checkout</h2>
+
+                    <p>
+
+                        Isi alamat pengiriman dan lakukan konfirmasi
+                        pesanan.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    6
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Upload Bukti Pembayaran</h2>
+
+                    <p>
+
+                        Upload bukti pembayaran agar pesanan dapat
+                        diverifikasi oleh admin.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    7
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Pesanan Diproses</h2>
+
+                    <p>
+
+                        Setelah pembayaran berhasil diverifikasi,
+                        admin akan memproses pesanan.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    8
+                </div>
+
+                <div class="step-content">
+
+                    <h2>Pesanan Selesai</h2>
+
+                    <p>
+
+                        Produk dikirim kepada pelanggan dan transaksi
+                        dinyatakan selesai.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Tombol -->
+
+        <div class="kembali">
+
+            <a href="index.html">
+
+                ← pergi ke halaman produk
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div id="loginOverlay" class="login-overlay">
+
+        <div class="login-box">
+
+            <span class="close" onclick="closeLogin()">&times;</span>
+
+            <div id="loginForm">
+
+                <h2>Login</h2>
+
+                <input type="text" placeholder="Username">
+
+                <input type="password" placeholder="Password">
+
+                <button class="btn-login">
+
+                    Login
+
+                </button>
+
+                <div class="switch-text">
+
+                    Belum punya akun?
+
+                    <a href="#" onclick="showRegister(event)">
+
+                        Daftar
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div id="registerForm" style="display:none;">
+
+                <h2>Daftar</h2>
+
+                <input type="text" placeholder="Nama">
+
+                <input type="email" placeholder="Email">
+
+                <input type="password" placeholder="Password">
+
+                <button class="btn-login">
+
+                    Daftar
+
+                </button>
+
+                <div class="switch-text">
+
+                    Sudah punya akun?
+
+                    <a href="#" onclick="showLogin(event)">
+
+                        Login
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function openSidebar() {
+
+            document.getElementById("sidebar").classList.add("active");
+
+            document.getElementById("overlay").classList.add("active");
+
+        }
+
+        function closeSidebar() {
+
+            document.getElementById("sidebar").classList.remove("active");
+
+            document.getElementById("overlay").classList.remove("active");
+
+        }
+
+        function openLogin() {
+            document.getElementById("loginOverlay").style.display = "flex";
+        }
+
+        function closeLogin() {
+            document.getElementById("loginOverlay").style.display = "none";
+        }
+
+        function showRegister(event) {
+            event.preventDefault();
+
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+        }
+
+        function showLogin(event) {
+            event.preventDefault();
+
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        }
+
+        window.onclick = function (e) {
+
+            if (e.target == document.getElementById("loginOverlay"))
+                closeLogin();
+        }
+
+    </script>
+
+</body>
+
+</html>
