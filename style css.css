@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #fcfbfb;
+}
+
+.mobile-container {
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(7, 50, 7);
+    margin: 0;
+    padding: 0;
+}
+
+/* ======================
+   SIDEBAR
+====================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    z-index: 2000;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    background: #3a5542fe;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.sidebar-menu a:hover {
+    background: #f5f5f5;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* ======================
+   HEADER
+====================== */
+
+header {
+    background: #4a5c50ad;
+    padding: 15px;
+}
+
+/* SEARCH + MENU */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box {
+    flex: 1;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.menu-button {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 10px;
+}
+
+/* ======================
+   INFO TOKO
+====================== */
+
+.store-info {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.store-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+}
+
+.store-judul {
+    margin-left: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+}
+
+.store-text {
+    margin-left: 15px;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    text-align: left;
+}
+
+.store-judul h2 {
+    margin-bottom: 5px;
+}
+
+/* ======================
+   FILTER
+====================== */
+
+.filter-header {
+    background: rgb(181, 170, 170);
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.filter-content {
+    display: none;
+    padding: 15px;
+    background: white;
+}
+
+.filter-content select {
+    width: 100%;
+    padding: 10px;
+}
+
+/* ======================
+   MAIN
+====================== */
+
+main {
+    min-height: 400px;
+    padding: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    color: gray;
+    margin-top: 100px;
+}
+
+/* ======================
+   PRODUK
+====================== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+}
+
+
+.product-info {
+    padding: 16px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #222;
+}
+
+/* LINK PRODUK */
+
+.product-grid a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+/* Laptop */
+@media (min-width: 721px) {
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* Tablet */
+@media (max-width: 720px) {
+
+    .mobile-container {
+        width: 100%;
+    }
+
+    .store-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+
+    .login-box {
+        width: 90%;
+    }
+
+}
+
+/* Smartphone */
+@media (max-width: 480px) {
+
+    header {
+        padding: 12px;
+    }
+
+    .search-container {
+        gap: 8px;
+    }
+
+    .search-box input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .menu-button {
+        font-size: 26px;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .store-judul h2 {
+        font-size: 20px;
+    }
+
+    .store-text {
+        font-size: 13px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-card img {
+        height: 170px;
+    }
+
+    .product-info h3 {
+        font-size: 13px;
+    }
+
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+}
+
+/* HP Sangat Kecil */
+@media (max-width: 360px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .store-judul h2 {
+        font-size: 18px;
+    }
+
+    .store-text {
+        font-size: 12px;
+    }
+
+    .menu-button {
+        font-size: 22px;
+    }
+
+    .search-box input {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+
+}
+
+/* ================= LOGIN POPUP ================= */
+
+.login-overlay {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3000;
+
+}
+
+.login-box {
+
+    width: 360px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+
+    animation: popup .3s;
+
+}
+
+@keyframes popup {
+
+    from {
+
+        transform: scale(.8);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+.login-box h2 {
+
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.login-box input {
+
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+}
+
+.btn-login {
+
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+
+    background: #36553d;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+.btn-login:hover {
+
+    background: #2c4632;
+
+}
+
+.switch-text {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+}
+
+.switch-text a {
+
+    color: #36553d;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+.close {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 10px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}

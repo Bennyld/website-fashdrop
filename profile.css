@@ -1,0 +1,703 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #f4f6f5;
+}
+
+.mobile-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, .15);
+    transition: .3s;
+    z-index: 999;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+
+    background: #36553d;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+
+}
+
+.sidebar-header img {
+
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    margin-bottom: 15px;
+
+}
+
+.sidebar-menu {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar-menu a {
+
+    text-decoration: none;
+    color: #333;
+    padding: 18px 25px;
+    border-bottom: 1px solid #eee;
+    transition: .3s;
+
+}
+
+.sidebar-menu a:hover {
+
+    background: #36553d;
+    color: white;
+
+}
+
+.overlay {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+
+    display: none;
+
+    z-index: 998;
+
+}
+
+.overlay.active {
+
+    display: block;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+
+    background: #36553d;
+    color: white;
+    padding: 18px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+.top-header {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-button {
+
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+
+}
+
+.judul-header h2 {
+
+    font-size: 28px;
+
+}
+
+.judul-header p {
+
+    color: #ddd;
+    margin-top: 5px;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+
+    background: linear-gradient(135deg, #36553d, #4f6f58);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+}
+
+.hero-top img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    padding: 10px;
+}
+
+.hero img {
+
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    padding: 10px;
+
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 45px;
+
+    background: #fff;
+    color: #36553d;
+
+    padding: 0 22px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+}
+
+.hero h1 {
+
+    font-size: 60px;
+    margin-bottom: 15px;
+
+}
+
+.hero h3 {
+
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 25px;
+
+}
+
+.hero p {
+
+    max-width: 750px;
+    line-height: 1.8;
+    font-size: 18px;
+
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+main {
+
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card {
+
+    background: white;
+    border-radius: 18px;
+    padding: 35px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+
+}
+
+.card h2 {
+
+    color: #36553d;
+    margin-bottom: 20px;
+
+}
+
+.card p {
+
+    color: #555;
+    line-height: 1.8;
+
+}
+
+.card ul {
+
+    padding-left: 20px;
+
+}
+
+.card li {
+
+    margin-bottom: 12px;
+
+}
+
+/* ==========================
+   GRID VISI MISI
+========================== */
+
+.grid2 {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+}
+
+/* ==========================
+   KEUNGGULAN
+========================== */
+
+.keunggulan {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+
+}
+
+.box {
+
+    background: #f8faf8;
+    border-radius: 15px;
+    padding: 25px;
+    transition: .3s;
+
+}
+
+.box:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .1);
+
+}
+
+.box h3 {
+
+    color: #36553d;
+    margin-bottom: 10px;
+
+}
+
+/* ==========================
+   FITUR
+========================== */
+
+.fitur-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+
+}
+
+.fitur-card {
+
+    background: #36553d;
+    color: white;
+
+    border-radius: 15px;
+
+    height: 130px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: .3s;
+
+    font-size: 40px;
+
+}
+
+.fitur-card:hover {
+
+    transform: scale(1.05);
+
+}
+
+.fitur-card span {
+
+    margin-top: 12px;
+    font-size: 15px;
+
+}
+
+/* ==========================
+   TEKNOLOGI
+========================== */
+
+.tech {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
+.tech span {
+
+    background: #36553d;
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+}
+
+/* ==========================
+   DEVELOPER
+========================== */
+
+.developer {
+
+    background: white;
+
+    text-align: center;
+
+    padding: 50px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+
+}
+
+.developer img {
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 5px solid #36553d;
+
+}
+
+.developer h2 {
+
+    color: #36553d;
+    margin-top: 20px;
+
+}
+
+.developer p {
+
+    color: #666;
+    margin: 10px 0 30px;
+
+}
+
+.developer a {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: #36553d;
+
+    padding: 14px 35px;
+
+    border-radius: 10px;
+
+    transition: .3s;
+
+}
+
+.developer a:hover {
+
+    background: #27412d;
+
+}
+
+/* ================= LOGIN POPUP ================= */
+
+.login-overlay {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, .6);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3000;
+
+}
+
+.login-box {
+
+    width: 360px;
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+
+    animation: popup .3s;
+
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+.login-box h2 {
+
+    text-align: center;
+    margin-bottom: 20px;
+
+    color: #36553d;
+
+}
+
+.login-box input {
+
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+}
+
+.btn-login {
+
+    width: 100%;
+    padding: 12px;
+
+    margin-top: 15px;
+
+    background: #36553d;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.btn-login:hover {
+
+    background: #27412d;
+
+}
+
+.switch-text {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+}
+
+.switch-text a {
+
+    text-decoration: none;
+
+    color: #36553d;
+
+    font-weight: bold;
+
+}
+
+.close {
+
+    position: absolute;
+
+    top: 10px;
+    right: 18px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px) {
+
+    .hero-top {
+
+        flex-direction: column;
+        gap: 15px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 40px;
+
+    }
+
+    .hero h3 {
+
+        font-size: 22px;
+
+    }
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+@media(max-width:480px) {
+
+    header {
+
+        padding: 15px;
+
+    }
+
+    .menu-button {
+
+        font-size: 28px;
+
+    }
+
+    .hero {
+
+        padding: 50px 15px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 30px;
+
+    }
+
+    .hero h3 {
+
+        font-size: 18px;
+
+    }
+
+    .hero p {
+
+        font-size: 14px;
+
+    }
+
+    .fitur-card {
+
+        height: 110px;
+        font-size: 32px;
+
+    }
+
+    .developer {
+
+        padding: 30px;
+
+    }
+
+    .developer img {
+
+        width: 120px;
+        height: 120px;
+
+    }
+
+    .sidebar {
+
+        width: 250px;
+
+    }
+
+}

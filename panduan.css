@@ -1,0 +1,512 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7f5;
+    overflow-x: hidden;
+}
+
+.mobile-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 3px 0 12px rgba(0, 0, 0, .2);
+    transition: .3s;
+    z-index: 999;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+
+    background: #36553d;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+
+}
+
+.sidebar-header img {
+
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    object-fit: cover;
+    margin-bottom: 15px;
+
+}
+
+.sidebar-menu {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebar-menu a {
+
+    padding: 16px 25px;
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+    border-bottom: 1px solid #eee;
+
+}
+
+.sidebar-menu a:hover {
+
+    background: #36553d;
+    color: white;
+
+}
+
+.overlay {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .45);
+
+    display: none;
+
+    z-index: 998;
+
+}
+
+.overlay.active {
+
+    display: block;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+
+    background: #36553d;
+    color: white;
+    padding: 20px;
+
+}
+
+.top-header {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-button {
+
+    font-size: 32px;
+    cursor: pointer;
+    margin-right: 20px;
+
+}
+
+.judul-header h2 {
+
+    font-size: 30px;
+
+}
+
+.judul-header p {
+
+    margin-top: 5px;
+    color: #dcdcdc;
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+
+    background: white;
+    text-align: center;
+    padding: 50px 20px;
+
+}
+
+.hero img {
+
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #f3f3f3;
+    object-fit: cover;
+
+}
+
+.hero h1 {
+
+    color: #36553d;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 36px;
+
+}
+
+.hero p {
+
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    color: #666;
+
+}
+
+/* ==========================
+   LANGKAH
+========================== */
+
+main {
+
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+
+}
+
+.step-card {
+
+    display: flex;
+    align-items: center;
+
+    background: white;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+
+}
+
+.step-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+
+}
+
+.step-number {
+
+    width: 110px;
+    min-height: 120px;
+
+    background: #36553d;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 42px;
+    font-weight: bold;
+
+}
+
+.step-content {
+
+    padding: 25px;
+
+}
+
+.step-content h2 {
+
+    color: #36553d;
+    margin-bottom: 12px;
+
+}
+
+.step-content p {
+
+    line-height: 1.8;
+    color: #555;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.kembali {
+
+    text-align: center;
+    margin: 60px 0;
+
+}
+
+.kembali a {
+
+    display: inline-block;
+
+    padding: 14px 35px;
+
+    background: #36553d;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: .3s;
+
+}
+
+.kembali a:hover {
+
+    background: #27412d;
+
+}
+
+/* ================= LOGIN POPUP ================= */
+
+.login-overlay {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, .6);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3000;
+
+}
+
+.login-box {
+
+    width: 360px;
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+
+    animation: popup .3s;
+
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+.login-box h2 {
+
+    text-align: center;
+    margin-bottom: 20px;
+
+    color: #36553d;
+
+}
+
+.login-box input {
+
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+}
+
+.btn-login {
+
+    width: 100%;
+    padding: 12px;
+
+    margin-top: 15px;
+
+    background: #36553d;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.btn-login:hover {
+
+    background: #27412d;
+
+}
+
+.switch-text {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+}
+
+.switch-text a {
+
+    text-decoration: none;
+
+    color: #36553d;
+
+    font-weight: bold;
+
+}
+
+.close {
+
+    position: absolute;
+
+    top: 10px;
+    right: 18px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px) {
+
+    .step-card {
+
+        flex-direction: column;
+
+    }
+
+    .step-number {
+
+        width: 100%;
+        min-height: 80px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 28px;
+
+    }
+
+    .judul-header h2 {
+
+        font-size: 24px;
+
+    }
+
+    .hero img {
+
+        width: 90px;
+        height: 90px;
+
+    }
+
+}
+
+@media(max-width:480px) {
+
+    header {
+
+        padding: 15px;
+
+    }
+
+    .menu-button {
+
+        font-size: 28px;
+
+    }
+
+    .step-content {
+
+        padding: 20px;
+
+    }
+
+    .step-content h2 {
+
+        font-size: 20px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 24px;
+
+    }
+
+    .hero p {
+
+        font-size: 14px;
+
+    }
+
+    .sidebar {
+
+        width: 250px;
+
+    }
+
+}
