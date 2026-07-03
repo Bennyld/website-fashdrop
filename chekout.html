@@ -81,7 +81,9 @@
 
             <label>Ukuran</label>
 
-            <select>
+            <select id="ukuran">
+
+                <option value="">-- pilih ukuraan --</option>
 
                 <option>S</option>
 
@@ -89,29 +91,31 @@
 
                 <option>L</option>
 
-                <option selected>XL</option>
+                <option>XL</option>
 
             </select>
 
             <label>Jumlah</label>
 
-            <input type="number" value="1" min="1">
+            <input type="number" id="jumlah" value="1" min="1">
 
             <label>Nama Penerima</label>
 
-            <input type="text" placeholder="Masukkan Nama">
+            <input type="text" id="nama" placeholder="Masukkan Nama">
 
             <label>No. HP</label>
 
-            <input type="text" placeholder="08xxxxxxxxxx">
+            <input type="text" id="nohp" placeholder="08xxxxxxxxxx">
 
             <label>Alamat Lengkap</label>
 
-            <textarea rows="4" placeholder="Masukkan alamat lengkap"></textarea>
+            <textarea id="alamat" rows="4" placeholder="Masukkan alamat lengkap"></textarea>
 
             <label>Metode Pembayaran</label>
 
             <select id="metodePembayaran">
+
+                <option value="">-- Pilih Metode Pembayaran --</option>
 
                 <option>Transfer Bank</option>
 
@@ -161,49 +165,127 @@
 
     <script>
 
-        function openSidebar() {
+    function openSidebar() {
 
-            document.getElementById("sidebar").classList.add("active");
+        document.getElementById("sidebar").classList.add("active");
 
-            document.getElementById("overlay").classList.add("active");
+        document.getElementById("overlay").classList.add("active");
 
-        }
+    }
 
-        function closeSidebar() {
+    function closeSidebar() {
 
-            document.getElementById("sidebar").classList.remove("active");
+        document.getElementById("sidebar").classList.remove("active");
 
-            document.getElementById("overlay").classList.remove("active");
+        document.getElementById("overlay").classList.remove("active");
 
-        }
+    }
 
-        function buatPesanan() {
+    function buatPesanan() {
 
-            const pembayaran = document.getElementById("metodePembayaran").value;
+        const ukuran = document.getElementById("ukuran");
+        const jumlah = document.getElementById("jumlah");
+        const nama = document.getElementById("nama");
+        const nohp = document.getElementById("nohp");
+        const alamat = document.getElementById("alamat");
+        const pembayaran = document.getElementById("metodePembayaran");
 
-            if (pembayaran == "QRIS") {
+        // Validasi ukuran
+        if (ukuran.value === "") {
 
-                window.location.href = "detail-pembayaran.html";
-
-            }
-
-            else if (pembayaran == "Transfer Bank") {
-
-                window.location.href = "detail-pembayaran.html";
-
-            }
-
-            else {
-
-                alert("Pesanan berhasil dibuat!");
-
-                window.location.href = "pesanan.html";
-
-            }
+            alert("Silakan pilih ukuran produk.");
+            ukuran.focus();
+            return;
 
         }
 
-    </script>
+        // Validasi jumlah
+        if (jumlah.value === "" || parseInt(jumlah.value) < 1) {
+
+            alert("Jumlah produk harus minimal 1.");
+            jumlah.focus();
+            return;
+
+        }
+
+        // Validasi nama penerima
+        if (nama.value.trim() === "") {
+
+            alert("Nama penerima wajib diisi.");
+            nama.focus();
+            return;
+
+        }
+
+        // Validasi nomor HP
+        if (nohp.value.trim() === "") {
+
+            alert("Nomor HP wajib diisi.");
+            nohp.focus();
+            return;
+
+        }
+
+        // Nomor HP hanya angka
+        if (!/^[0-9]+$/.test(nohp.value.trim())) {
+
+            alert("Nomor HP hanya boleh berisi angka.");
+            nohp.focus();
+            return;
+
+        }
+
+        // Panjang nomor HP
+        if (nohp.value.trim().length < 10 || nohp.value.trim().length > 15) {
+
+            alert("Nomor HP harus terdiri dari 10 sampai 15 digit.");
+            nohp.focus();
+            return;
+
+        }
+
+        // Validasi alamat
+        if (alamat.value.trim() === "") {
+
+            alert("Alamat lengkap wajib diisi.");
+            alamat.focus();
+            return;
+
+        }
+
+        // Validasi metode pembayaran
+        if (pembayaran.value === "") {
+
+            alert("Silakan pilih metode pembayaran.");
+            pembayaran.focus();
+            return;
+
+        }
+
+        // Jika semua valid
+        if (pembayaran.value === "QRIS") {
+
+            window.location.href = "detail-pembayaran.html";
+
+        }
+
+        else if (pembayaran.value === "Transfer Bank") {
+
+            window.location.href = "detail-pembayaran.html";
+
+        }
+
+        else {
+
+            alert("Pesanan berhasil dibuat!");
+
+            window.location.href = "pesanan.html";
+
+        }
+
+    }
+
+</script>
 
 </body>
 
